@@ -1,0 +1,11 @@
+# Rider specific files
+.idea/
+*.sln.iml
+
+# Binaries and build artifacts
+/bin/
+/obj/
+
+# Visual Studio files
+.vs/
+*.userprefs

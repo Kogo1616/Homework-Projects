@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/Girteka.ElectricAggregate.API.props" />
+</Project>

@@ -1,0 +1,15 @@
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/bin/Debug/net7.0/Girteka.ElectricAggregate.Integrations.deps.json
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/bin/Debug/net7.0/Girteka.ElectricAggregate.Integrations.dll
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/bin/Debug/net7.0/Girteka.ElectricAggregate.Integrations.pdb
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/obj/Debug/net7.0/Girteka.ElectricAggregate.Integrations.csproj.AssemblyReference.cache
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/obj/Debug/net7.0/Girteka.ElectricAggregate.Integrations.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/obj/Debug/net7.0/Girteka.ElectricAggregate.Integrations.AssemblyInfoInputs.cache
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/obj/Debug/net7.0/Girteka.ElectricAggregate.Integrations.AssemblyInfo.cs
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/obj/Debug/net7.0/Girteka.ElectricAggregate.Integrations.csproj.CoreCompileInputs.cache
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/obj/Debug/net7.0/Girteka.ElectricAggregate.Integrations.dll
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/obj/Debug/net7.0/refint/Girteka.ElectricAggregate.Integrations.dll
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/obj/Debug/net7.0/Girteka.ElectricAggregate.Integrations.pdb
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/obj/Debug/net7.0/ref/Girteka.ElectricAggregate.Integrations.dll
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/bin/Debug/net7.0/Girteka.ElectricAggregate.Domain.dll
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/bin/Debug/net7.0/Girteka.ElectricAggregate.Domain.pdb
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/obj/Debug/net7.0/Girteka.ElectricAggregate.Integrations.csproj.CopyComplete

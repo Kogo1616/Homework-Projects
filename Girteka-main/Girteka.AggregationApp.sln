@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Girteka.ElectricAggregate.Domain", "Girteka.ElectricAggregate.Domain\Girteka.ElectricAggregate.Domain.csproj", "{00C36CDD-8482-4093-8356-D45EF0B4EA65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Girteka.ElectricAggregate.Persistence", "Girteka.ElectricAggregate.Persistence\Girteka.ElectricAggregate.Persistence.csproj", "{A9F4423A-FF6A-4B3B-8925-C02E0A151295}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Girteka.ElectricAggregate.API", "Girteka.ElectricAggregate.API\Girteka.ElectricAggregate.API.csproj", "{DD9C9E24-AA65-4C89-80DC-5D84C87747FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Girteka.ElectricAggregate.Job", "Girteka.ElectricAggregate.Job\Girteka.ElectricAggregate.Job.csproj", "{E5A07314-DEDF-474D-B8F8-CB7E56383233}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Girteka.ElectricAggregate.UnitTests", "Girteka.ElectricAggregate.UnitTests\Girteka.ElectricAggregate.UnitTests.csproj", "{0C5F7664-CDEB-423A-BC8A-7218A28BBFE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Girteka.ElectricAggregate.Integrations", "Girteka.ElectricAggregate.Integrations\Girteka.ElectricAggregate.Integrations.csproj", "{61B7DEC8-03CF-4E80-A7B2-3CB6063484F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00C36CDD-8482-4093-8356-D45EF0B4EA65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C36CDD-8482-4093-8356-D45EF0B4EA65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C36CDD-8482-4093-8356-D45EF0B4EA65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C36CDD-8482-4093-8356-D45EF0B4EA65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9F4423A-FF6A-4B3B-8925-C02E0A151295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F4423A-FF6A-4B3B-8925-C02E0A151295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F4423A-FF6A-4B3B-8925-C02E0A151295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F4423A-FF6A-4B3B-8925-C02E0A151295}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD9C9E24-AA65-4C89-80DC-5D84C87747FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9C9E24-AA65-4C89-80DC-5D84C87747FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9C9E24-AA65-4C89-80DC-5D84C87747FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9C9E24-AA65-4C89-80DC-5D84C87747FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5A07314-DEDF-474D-B8F8-CB7E56383233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A07314-DEDF-474D-B8F8-CB7E56383233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A07314-DEDF-474D-B8F8-CB7E56383233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A07314-DEDF-474D-B8F8-CB7E56383233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C5F7664-CDEB-423A-BC8A-7218A28BBFE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C5F7664-CDEB-423A-BC8A-7218A28BBFE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C5F7664-CDEB-423A-BC8A-7218A28BBFE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C5F7664-CDEB-423A-BC8A-7218A28BBFE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B7DEC8-03CF-4E80-A7B2-3CB6063484F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B7DEC8-03CF-4E80-A7B2-3CB6063484F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B7DEC8-03CF-4E80-A7B2-3CB6063484F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B7DEC8-03CF-4E80-A7B2-3CB6063484F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal

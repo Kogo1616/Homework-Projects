@@ -1,0 +1,15 @@
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/bin/Debug/net7.0/Utility
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/bin/Debug/net7.0/Utility.deps.json
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/bin/Debug/net7.0/Utility.runtimeconfig.json
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/bin/Debug/net7.0/Utility.dll
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/bin/Debug/net7.0/Utility.pdb
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/obj/Debug/net7.0/Utility.csproj.AssemblyReference.cache
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/obj/Debug/net7.0/Utility.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/obj/Debug/net7.0/Utility.AssemblyInfoInputs.cache
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/obj/Debug/net7.0/Utility.AssemblyInfo.cs
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/obj/Debug/net7.0/Utility.csproj.CoreCompileInputs.cache
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/obj/Debug/net7.0/Utility.dll
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/obj/Debug/net7.0/refint/Utility.dll
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/obj/Debug/net7.0/Utility.pdb
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/obj/Debug/net7.0/Utility.genruntimeconfig.cache
+/Users/sabakoghuashvili/Desktop/Tipalti/Utility/Utility/obj/Debug/net7.0/ref/Utility.dll

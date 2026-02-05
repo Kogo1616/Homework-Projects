@@ -3,9 +3,9 @@ using Shared;
 
 namespace DevQuestions.Application.Questions.Exceptions;
 
-public class QuestionValidationException : BadRequestException
+public class ToManyQuestionsException : BadRequestException
 {
-    protected QuestionValidationException(Error[] errors)
+    public ToManyQuestionsException(Error[] errors)
         : base(errors)
     {
 

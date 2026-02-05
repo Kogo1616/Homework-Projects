@@ -4,6 +4,7 @@ using DevQuestions.Contracts.Questions;
 using DevQuestions.Domain.Questions;
 using FluentValidation;
 using Microsoft.Extensions.Logging;
+using Shared;
 
 namespace DevQuestions.Application.Questions;
 
@@ -35,7 +36,9 @@ public class QuestionsService(
 
         if (openUserQuestionsCount > 3)
         {
-            throw new Exception("User can not open more three questions");
+            throw new ToManyQuestionsException([
+                Error.Failure("question.too.many", "User can not open more three questions")
+            ]);
         }
 
         var questionId = Guid.NewGuid();

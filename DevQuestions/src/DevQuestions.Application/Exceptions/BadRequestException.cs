@@ -5,8 +5,8 @@ namespace DevQuestions.Application.Exceptions;
 
 public class BadRequestException : Exception
 {
-    protected BadRequestException(Error[] error)
-        : base(JsonSerializer.Serialize(error))
+    protected BadRequestException(Error[] errors)
+        : base(JsonSerializer.Serialize(errors))
     {
     }
 }

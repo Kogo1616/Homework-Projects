@@ -5,8 +5,8 @@ namespace DevQuestions.Application.Exceptions;
 
 public class NotFoundException : Exception
 {
-    protected NotFoundException(Error[] error)
-        : base(JsonSerializer.Serialize(error))
+    protected NotFoundException(Error[] errors)
+        : base(JsonSerializer.Serialize(errors))
     {
     }
 }

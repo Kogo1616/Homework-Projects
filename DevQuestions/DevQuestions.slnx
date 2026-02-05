@@ -4,4 +4,5 @@
   <Project Path="src/DevQuestions.Domain/DevQuestions.Domain.csproj" Id="f4829a5d-d499-434b-a2ca-3ff8736bb27d" />
   <Project Path="src/DevQuestions.Infrastructure/DevQuestions.Infrastructure.csproj" Id="1b3fb323-7287-4b89-91e0-fad879e40d0b" />
   <Project Path="src/DevQuestions.Web/DevQuestions.Web.csproj" Id="ba079cf2-5990-418f-8983-572ad705b12a" />
+  <Project Path="src/Shared/Shared.csproj" Id="5ac67c1c-80e1-4411-8914-6761881d5f10" />
 </Solution>

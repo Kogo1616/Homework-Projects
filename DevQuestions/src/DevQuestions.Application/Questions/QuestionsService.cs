@@ -1,4 +1,5 @@
 ﻿using DevQuestions.Application.FullTextSearch;
+using DevQuestions.Application.Questions.Exceptions;
 using DevQuestions.Contracts.Questions;
 using DevQuestions.Domain.Questions;
 using FluentValidation;
@@ -25,7 +26,7 @@ public class QuestionsService(
 
         if (!validatorResult.IsValid)
         {
-            throw new ValidationException(validatorResult.Errors);
+            throw new QuestionValidationException(validatorResult.Errors.Select(x => x.ErrorMessage));
         }
 
         //validation business logic

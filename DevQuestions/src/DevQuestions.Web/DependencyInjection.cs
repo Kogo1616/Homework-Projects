@@ -7,7 +7,7 @@ public static class DependencyInjection
     public static IServiceCollection AddProgramDependencies(this IServiceCollection services)
     {
         return services.AddWebDependencies()
-             .AddApplication();
+            .AddApplication();
     }
 
     private static IServiceCollection AddWebDependencies(this IServiceCollection services)

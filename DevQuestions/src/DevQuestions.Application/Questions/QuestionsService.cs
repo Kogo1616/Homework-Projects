@@ -1,15 +1,21 @@
-﻿using DevQuestions.Contracts.Questions;
+﻿using DevQuestions.Application.FullTextSearch;
+using DevQuestions.Contracts.Questions;
 using DevQuestions.Domain.Questions;
 using FluentValidation;
 using Microsoft.Extensions.Logging;
 
 namespace DevQuestions.Application.Questions;
 
-public class QuestionsService(IQuestionsRepository questionsRepository, IValidator<CreateQuestionRequest> validator, ILogger<QuestionsService> logger) : IQuestionService
+public class QuestionsService(
+    IQuestionsRepository questionsRepository,
+    IValidator<CreateQuestionRequest> validator,
+    ILogger<QuestionsService> logger,
+    ISearchProvider searchProvider) : IQuestionService
 {
     private readonly IQuestionsRepository _questionsRepository = questionsRepository;
     private readonly IValidator<CreateQuestionRequest> _validator = validator;
     private readonly ILogger<QuestionsService> _logger = logger;
+    private readonly ISearchProvider _searchProvider = searchProvider;
 
     public async Task<Guid> Create(CreateQuestionRequest questionRequest,
         CancellationToken cancellationToken)
@@ -42,6 +48,8 @@ public class QuestionsService(IQuestionsRepository questionsRepository, IValidat
             questionRequest.TagsIds);
 
         await _questionsRepository.AddAsync(question, cancellationToken);
+
+        await _searchProvider.IndexQuestionAsync(question, cancellationToken);
 
         _logger.LogInformation("Question created with id {questionId}", questionId);
 

@@ -2,5 +2,6 @@
   <Project Path="src/DevQuestions.Application/DevQuestions.Application.csproj" Id="0416ca77-653d-49b3-946e-2796f199bbd7" />
   <Project Path="src/DevQuestions.Contracts/DevQuestions.Contracts.csproj" Id="3d2ae359-4a33-4127-b43c-bd63ad3be3bb" />
   <Project Path="src/DevQuestions.Domain/DevQuestions.Domain.csproj" Id="f4829a5d-d499-434b-a2ca-3ff8736bb27d" />
+  <Project Path="src/DevQuestions.Infrastructure/DevQuestions.Infrastructure.csproj" Id="1b3fb323-7287-4b89-91e0-fad879e40d0b" />
   <Project Path="src/DevQuestions.Web/DevQuestions.Web.csproj" Id="ba079cf2-5990-418f-8983-572ad705b12a" />
 </Solution>

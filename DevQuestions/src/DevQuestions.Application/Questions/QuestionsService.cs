@@ -59,7 +59,6 @@ public class QuestionsService(
 
         return questionId;
     }
-
     public async Task Get(GetQuestionRequest questionRequest,
         CancellationToken cancellationToken)
     {

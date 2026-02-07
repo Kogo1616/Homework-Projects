@@ -5,7 +5,7 @@ namespace DevQuestions.Application.Questions.Exceptions;
 
 public class QuestionValidationException : BadRequestException
 {
-    protected QuestionValidationException(Error[] errors)
+    public QuestionValidationException(Error[] errors)
         : base(errors)
     {
 

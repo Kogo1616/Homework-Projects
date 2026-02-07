@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Comments\" />
     <Folder Include="FileStorage\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 
   <ItemGroup>

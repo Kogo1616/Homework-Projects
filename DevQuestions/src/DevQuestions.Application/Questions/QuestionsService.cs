@@ -1,8 +1,11 @@
-﻿using DevQuestions.Application.FullTextSearch;
+﻿using DevQuestions.Application.Extensions;
+using DevQuestions.Application.FullTextSearch;
 using DevQuestions.Application.Questions.Exceptions;
+using DevQuestions.Application.Questions.Fails;
 using DevQuestions.Contracts.Questions;
 using DevQuestions.Domain.Questions;
 using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.Extensions.Logging;
 using Shared;
 
@@ -27,7 +30,7 @@ public class QuestionsService(
 
         if (!validatorResult.IsValid)
         {
-            throw new QuestionValidationException(validatorResult.Errors.Select(x => x.ErrorMessage));
+            throw new QuestionValidationException(validatorResult.ToErrors());
         }
 
         //validation business logic
@@ -36,9 +39,7 @@ public class QuestionsService(
 
         if (openUserQuestionsCount > 3)
         {
-            throw new ToManyQuestionsException([
-                Error.Failure("question.too.many", "User can not open more three questions")
-            ]);
+            throw new ToManyQuestionsException();
         }
 
         var questionId = Guid.NewGuid();

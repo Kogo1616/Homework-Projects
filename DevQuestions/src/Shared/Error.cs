@@ -1,12 +1,17 @@
-﻿namespace Shared
+﻿using System.Text.Json.Serialization;
+
+namespace Shared
 {
     public class Error
     {
         public string Code { get; set; }
         public string Message { get; set; }
+
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ErrorType Type { get; set; }
         public string? InvalidField { get; set; }
 
+        [JsonConstructor]
         public Error(string code, string message, ErrorType type, string? invalidField = null)
         {
             Code = code;
@@ -27,13 +32,4 @@
         public static Error Failure(string? code, string message)
             => new(code ?? "value.is.conflict", message, ErrorType.FAILURE);
     }
-}
-
-
-public enum ErrorType
-{
-    VALIDATION,
-    NOT_FOUND,
-    FAILURE,
-    CONFLICT
 }

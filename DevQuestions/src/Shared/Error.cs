@@ -4,6 +4,7 @@ namespace Shared
 {
     public class Error
     {
+        public static Error None = new Error(string.Empty, string.Empty, ErrorType.None);
         public string Code { get; set; }
         public string Message { get; set; }
 
@@ -31,5 +32,7 @@ namespace Shared
 
         public static Error Failure(string? code, string message)
             => new(code ?? "value.is.conflict", message, ErrorType.FAILURE);
+
+        public Failure ToFailure() => this;
     }
 }

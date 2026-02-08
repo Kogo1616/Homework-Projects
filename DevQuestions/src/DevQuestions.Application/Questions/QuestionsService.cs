@@ -1,11 +1,11 @@
-﻿using DevQuestions.Application.Extensions;
+﻿using CSharpFunctionalExtensions;
+using DevQuestions.Application.Extensions;
 using DevQuestions.Application.FullTextSearch;
 using DevQuestions.Application.Questions.Exceptions;
 using DevQuestions.Application.Questions.Fails;
 using DevQuestions.Contracts.Questions;
 using DevQuestions.Domain.Questions;
 using FluentValidation;
-using FluentValidation.Results;
 using Microsoft.Extensions.Logging;
 using Shared;
 
@@ -22,7 +22,7 @@ public class QuestionsService(
     private readonly ILogger<QuestionsService> _logger = logger;
     private readonly ISearchProvider _searchProvider = searchProvider;
 
-    public async Task<Guid> Create(CreateQuestionRequest questionRequest,
+    public async Task<Result<Guid, Failure>> Create(CreateQuestionRequest questionRequest,
         CancellationToken cancellationToken)
     {
         //validation request model
@@ -30,7 +30,7 @@ public class QuestionsService(
 
         if (!validatorResult.IsValid)
         {
-            throw new QuestionValidationException(validatorResult.ToErrors());
+            return validatorResult.ToErrors();
         }
 
         //validation business logic
@@ -39,10 +39,11 @@ public class QuestionsService(
 
         if (openUserQuestionsCount > 3)
         {
-            throw new ToManyQuestionsException();
+            return Errors.Questions.ToManyQuestions().ToFailure();
         }
 
         var questionId = Guid.NewGuid();
+
 
         var question = new Question(
             questionId,
@@ -52,6 +53,13 @@ public class QuestionsService(
             null,
             questionRequest.TagsIds);
 
+        var indexResult = await _searchProvider.IndexQuestionAsync(question, cancellationToken);
+
+        if (indexResult.IsFailure)
+        {
+            return indexResult.Error;
+        }
+
         await _questionsRepository.AddAsync(question, cancellationToken);
 
         await _searchProvider.IndexQuestionAsync(question, cancellationToken);
@@ -60,6 +68,7 @@ public class QuestionsService(
 
         return questionId;
     }
+
     public async Task Get(GetQuestionRequest questionRequest,
         CancellationToken cancellationToken)
     {
@@ -88,5 +97,5 @@ public class QuestionsService(
     public async Task AddAnswer(Guid questionId, AddAnswerRequest answerRequest,
         CancellationToken cancellationToken)
     {
-    } 
+    }
 }

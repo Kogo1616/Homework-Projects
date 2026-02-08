@@ -39,7 +39,7 @@ public class QuestionsService(
 
         if (openUserQuestionsCount > 3)
         {
-            return Errors.Questions.ToManyQuestions().ToFailure();
+            return Errors.Questions.ToManyQuestions().ToFailure(); 
         }
 
         var questionId = Guid.NewGuid();

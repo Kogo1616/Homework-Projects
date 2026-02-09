@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Folder Include="Comments\" />
+    <Folder Include="Middlewares\" />
   </ItemGroup>
 
 </Project>

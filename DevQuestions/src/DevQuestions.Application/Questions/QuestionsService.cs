@@ -1,7 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
-using DevQuestions.Application.Extensions;
 using DevQuestions.Application.FullTextSearch;
-using DevQuestions.Application.Questions.Exceptions;
 using DevQuestions.Application.Questions.Fails;
 using DevQuestions.Contracts.Questions;
 using DevQuestions.Domain.Questions;

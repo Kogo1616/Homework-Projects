@@ -25,12 +25,11 @@ public class QuestionsService(
     public async Task<Result<Guid, Failure>> Create(CreateQuestionRequest questionRequest,
         CancellationToken cancellationToken)
     {
-        //validation request model
         var validatorResult = await _validator.ValidateAsync(questionRequest, cancellationToken);
 
         if (!validatorResult.IsValid)
         {
-            return validatorResult.ToErrors();
+            
         }
 
         //validation business logic
@@ -39,7 +38,7 @@ public class QuestionsService(
 
         if (openUserQuestionsCount > 3)
         {
-            return Errors.Questions.ToManyQuestions().ToFailure(); 
+            return Errors.Questions.ToManyQuestions().ToFailure();
         }
 
         var questionId = Guid.NewGuid();
@@ -52,13 +51,6 @@ public class QuestionsService(
             questionRequest.UserId,
             null,
             questionRequest.TagsIds);
-
-        var indexResult = await _searchProvider.IndexQuestionAsync(question, cancellationToken);
-
-        if (indexResult.IsFailure)
-        {
-            return indexResult.Error;
-        }
 
         await _questionsRepository.AddAsync(question, cancellationToken);
 

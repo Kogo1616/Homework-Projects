@@ -41,7 +41,7 @@ public class ExceptionMiddleware
                 StatusCodes.Status404NotFound, JsonSerializer.Deserialize<Error[]>(exception.Message)),
 
             _ => (
-                StatusCodes.Status500InternalServerError, new[] { Error.Failure(null, "Something went wrong") })
+                StatusCodes.Status500InternalServerError, [Error.Failure(null, "Something went wrong")])
         };
 
         context.Response.ContentType = "application/json";

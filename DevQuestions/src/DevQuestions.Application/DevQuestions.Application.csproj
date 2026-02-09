@@ -8,8 +8,10 @@
 
   <ItemGroup>
     <Folder Include="Comments\" />
+    <Folder Include="Exceptions\" />
     <Folder Include="FileStorage\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Questions\Exceptions\" />
   </ItemGroup>
 
   <ItemGroup>

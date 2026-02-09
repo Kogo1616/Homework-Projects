@@ -15,6 +15,11 @@ namespace DevQuestions.Web.Questions
             CancellationToken cancellationToken)
         {
             var questionId = await _questionService.Create(questionRequest, cancellationToken);
+
+            if (questionId.IsFailure)
+            {
+                return BadRequest(questionId.Error);
+            }
             return Ok(questionId);
         }
 

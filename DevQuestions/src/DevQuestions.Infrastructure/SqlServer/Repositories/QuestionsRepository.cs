@@ -1,5 +1,6 @@
 ﻿using DevQuestions.Application.Questions;
 using DevQuestions.Domain.Questions;
+using Microsoft.EntityFrameworkCore;
 
 namespace DevQuestions.Infrastructure.SqlServer.Repositories;
 
@@ -26,9 +27,14 @@ public class QuestionsRepository(QuestionsDbContext dbContext) : IQuestionsRepos
         throw new NotImplementedException();
     }
 
-    public async Task<Question> GetByIdAsync(Guid questionId, CancellationToken cancellationToken)
+    public async Task<Question?> GetByIdAsync(Guid questionId, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var question = await _dbContext.Questions
+            .Include(q => q.Answers)
+            .Include(q => q.Solution)
+            .FirstOrDefaultAsync(x => x.Id == questionId, cancellationToken);
+
+        return question;
     }
 
     public async Task<int> GetOpenUserQuestionsAsync(Guid userId, CancellationToken cancellationToken)

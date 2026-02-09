@@ -12,6 +12,7 @@
     <Folder Include="FileStorage\" />
     <Folder Include="Extensions\" />
     <Folder Include="Questions\Exceptions\" />
+    <Folder Include="Questions\Fails\" />
   </ItemGroup>
 
   <ItemGroup>

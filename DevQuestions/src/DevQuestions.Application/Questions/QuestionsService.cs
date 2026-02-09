@@ -1,11 +1,8 @@
-﻿using CSharpFunctionalExtensions;
-using DevQuestions.Application.FullTextSearch;
-using DevQuestions.Application.Questions.Fails;
+﻿using DevQuestions.Application.FullTextSearch;
 using DevQuestions.Contracts.Questions;
 using DevQuestions.Domain.Questions;
 using FluentValidation;
 using Microsoft.Extensions.Logging;
-using Shared;
 
 namespace DevQuestions.Application.Questions;
 
@@ -20,7 +17,7 @@ public class QuestionsService(
     private readonly ILogger<QuestionsService> _logger = logger;
     private readonly ISearchProvider _searchProvider = searchProvider;
 
-    public async Task<Result<Guid, Failure>> Create(CreateQuestionRequest questionRequest,
+    public async Task Create(CreateQuestionRequest questionRequest,
         CancellationToken cancellationToken)
     {
         var validatorResult = await _validator.ValidateAsync(questionRequest, cancellationToken);
@@ -36,7 +33,7 @@ public class QuestionsService(
 
         if (openUserQuestionsCount > 3)
         {
-            return Errors.Questions.ToManyQuestions().ToFailure();
+            //return Errors.Questions.ToManyQuestions().ToFailure();
         }
 
         var questionId = Guid.NewGuid();
@@ -56,7 +53,7 @@ public class QuestionsService(
 
         _logger.LogInformation("Question created with id {questionId}", questionId);
 
-        return questionId;
+       // return questionId;
     }
 
     public async Task Get(GetQuestionRequest questionRequest,

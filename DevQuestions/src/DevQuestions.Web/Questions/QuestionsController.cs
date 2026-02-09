@@ -14,13 +14,10 @@ namespace DevQuestions.Web.Questions
         public async Task<IActionResult> Create([FromBody] CreateQuestionRequest questionRequest,
             CancellationToken cancellationToken)
         {
-            var questionId = await _questionService.Create(questionRequest, cancellationToken);
+            //var questionId = await _questionService.Create(questionRequest, cancellationToken);
 
-            if (questionId.IsFailure)
-            {
-                return BadRequest(questionId.Error);
-            }
-            return Ok(questionId);
+           
+            return Ok();
         }
 
         [HttpGet]

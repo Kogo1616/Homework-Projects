@@ -1,11 +1,10 @@
 ﻿using CSharpFunctionalExtensions;
 using DevQuestions.Domain.Questions;
-using Shared;
 
 namespace DevQuestions.Application.FullTextSearch;
 
 public interface ISearchProvider
 {
     Task<List<Guid>> SearchAsync(string query, CancellationToken cancellationToken);
-    Task<UnitResult<Failure>> IndexQuestionAsync(Question question, CancellationToken cancellationToken);
+    Task IndexQuestionAsync(Question question, CancellationToken cancellationToken);
 }

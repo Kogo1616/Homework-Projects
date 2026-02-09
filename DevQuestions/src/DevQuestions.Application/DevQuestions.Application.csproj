@@ -7,12 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Questions\Exceptions\**" />
+    <Compile Remove="Questions\Fails\**" />
+    <EmbeddedResource Remove="Questions\Exceptions\**" />
+    <EmbeddedResource Remove="Questions\Fails\**" />
+    <None Remove="Questions\Exceptions\**" />
+    <None Remove="Questions\Fails\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Comments\" />
     <Folder Include="Exceptions\" />
     <Folder Include="FileStorage\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Questions\Exceptions\" />
-    <Folder Include="Questions\Fails\" />
   </ItemGroup>
 
   <ItemGroup>

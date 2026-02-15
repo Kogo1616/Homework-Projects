@@ -29,7 +29,6 @@ public class QuestionsService(
         //validation business logic
         var openUserQuestionsCount =
             await _questionsRepository.GetOpenUserQuestionsAsync(questionRequest.UserId, cancellationToken);
-
         if (openUserQuestionsCount > 3)
         {
             //return Errors.Questions.ToManyQuestions().ToFailure();
@@ -52,7 +51,7 @@ public class QuestionsService(
 
         _logger.LogInformation("Question created with id {questionId}", questionId);
 
-       // return questionId;
+        // return questionId;
     }
 
     public async Task Get(GetQuestionRequest questionRequest,

@@ -25,7 +25,6 @@ public class QuestionsService(
         if (!validatorResult.IsValid)
         {
         }
-
         //validation business logic
         var openUserQuestionsCount =
             await _questionsRepository.GetOpenUserQuestionsAsync(questionRequest.UserId, cancellationToken);

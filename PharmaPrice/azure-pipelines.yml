@@ -1,0 +1,77 @@
+# Azure DevOps Pipeline — PharmaPrice (.NET 10 + React/Vite → Azure App Service, Linux)
+#
+# `dotnet publish backend/backend.csproj` also builds the React frontend and copies
+# it into wwwroot (see the BuildReactApp target in backend/backend.csproj), so the
+# build agent needs BOTH the .NET 10 SDK and Node.js.
+#
+# Before this runs, set these two values (see DEPLOY.md):
+#   - azureServiceConnection : name of the Azure Resource Manager service connection
+#   - webAppName             : name of your Azure App Service
+
+trigger:
+  branches:
+    include:
+      - main
+
+variables:
+  buildConfiguration: 'Release'
+  azureServiceConnection: 'PharmaPrice-Azure'   # <-- rename to your service connection
+  webAppName: 'pharmaprice'                       # <-- rename to your App Service name
+
+stages:
+  - stage: Build
+    displayName: Build
+    jobs:
+      - job: Build
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - task: NodeTool@0
+            displayName: 'Install Node.js (for the React build)'
+            inputs:
+              versionSpec: '20.x'
+
+          - task: UseDotNet@2
+            displayName: 'Install .NET 10 SDK'
+            inputs:
+              packageType: 'sdk'
+              version: '10.0.x'
+
+          - script: dotnet publish backend/backend.csproj -c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)/publish
+            displayName: 'dotnet publish (builds React + backend)'
+
+          - task: ArchiveFiles@2
+            displayName: 'Zip published output'
+            inputs:
+              rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/publish'
+              includeRootFolder: false
+              archiveType: 'zip'
+              archiveFile: '$(Build.ArtifactStagingDirectory)/app.zip'
+              replaceExistingArchive: true
+
+          - publish: '$(Build.ArtifactStagingDirectory)/app.zip'
+            displayName: 'Publish build artifact'
+            artifact: drop
+
+  - stage: Deploy
+    displayName: Deploy to App Service
+    dependsOn: Build
+    condition: succeeded()
+    jobs:
+      - deployment: Deploy
+        pool:
+          vmImage: 'ubuntu-latest'
+        environment: 'production'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: AzureWebApp@1
+                  displayName: 'Deploy to Azure App Service'
+                  inputs:
+                    azureSubscription: '$(azureServiceConnection)'
+                    appType: 'webAppLinux'
+                    appName: '$(webAppName)'
+                    package: '$(Pipeline.Workspace)/drop/app.zip'
+                    runtimeStack: 'DOTNETCORE|10.0'
+                    startUpCommand: 'dotnet backend.dll'

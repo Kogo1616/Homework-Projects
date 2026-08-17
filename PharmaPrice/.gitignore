@@ -1,0 +1,21 @@
+# --- .NET ---
+bin/
+obj/
+*.user
+[Dd]ebug/
+[Rr]elease/
+
+# Visual Studio
+.vs/
+
+# Local publish output (the pipeline rebuilds this — never commit it)
+publish/
+
+# --- Node / frontend ---
+node_modules/
+frontend/dist/
+
+# --- Env / secrets ---
+*.env
+.env
+appsettings.*.local.json

@@ -1,0 +1,45 @@
+name: Deploy PharmaPrice to Azure
+
+# Runs only when files inside PharmaPrice/ change (so your other projects'
+# pushes don't trigger a deploy). Can also be run manually from the Actions tab.
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'PharmaPrice/**'
+      - '.github/workflows/pharmaprice-deploy.yml'
+  workflow_dispatch:
+
+env:
+  AZURE_WEBAPP_NAME: pharmaprice   # <-- your App Service name
+  DOTNET_VERSION: '10.0.x'
+  NODE_VERSION: '20.x'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Needed because `dotnet publish` runs `npm install && npm run build`
+      # (see the BuildReactApp target in PharmaPrice/backend/backend.csproj).
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Publish (builds React + backend into one folder)
+        run: dotnet publish PharmaPrice/backend/backend.csproj -c Release -o ${{ github.workspace }}/publish
+
+      - name: Deploy to Azure App Service
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ${{ github.workspace }}/publish
